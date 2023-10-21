@@ -1,0 +1,21 @@
+.container, .auth{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+}
+
+.container{
+    margin-bottom: 22px;
+}
+
+.btn{
+    padding: 10px 20px;
+    outline: none;
+    background-color: rgb(55, 56, 62);
+    color: #fff;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+}
