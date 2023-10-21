@@ -5,6 +5,8 @@ import Input from "../Input/index.jsx";
 import { useState, useEffect } from "react";
 import { VALID_EMAIL, VALID_PASSWORD } from "../PattenValidation/validation";
 import ForgotBox from "../ForgotBox/index.jsx";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function LoginForm() {
   const [email, setEmail] = useState({
@@ -30,14 +32,56 @@ function LoginForm() {
     console.log("password", password.isValidate);
   }, [password.value]);
 
+  const notify = () => {
+    if (!email.isValidate) {
+      // alert("فرمت ایمیل صحیح نیست!");
+      toast.warn("فرمت ایمیل صحیح نیست.", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: true,
+        closeOnClick: false,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        closeButton: false,
+        style: { background: "#D95C5C" },
+      });
+    } else if (!email.isValidate || !password.isValidate) {
+      // alert("نام کاربری یا رمز ورودی صحیح نمی باشد.");
+      toast.warn("نام کاربری یا رمز ورودی صحیح نمی باشد.", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: true,
+        closeOnClick: false,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        closeButton: false,
+        style: { background: "#D95C5C" },
+      });
+    } else {
+      toast.success("با موفقیت انجام شد!", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: true,
+        closeOnClick: false,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        closeButton: false,
+      });
+    }
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!email.isValidate) {
-      alert("فرمت ایمیل صحیح نیست!");
-    } else if (!email.isValidate || !password.isValidate) {
-      alert("نام کاربری یا رمز ورودی صحیح نمی باشد.");
-    } else {
-    }
+    const info = {
+      email: email.value,
+      password: password.value,
+    };
+    console.log(info);
   };
 
   return (
@@ -66,11 +110,25 @@ function LoginForm() {
           <button
             className={style.btnSubmit}
             disabled={!email.value || !password.value}
+            onClick={notify}
           >
             ورود
           </button>
           <ForgotBox reminder={style.reminder} />
         </form>
+        <ToastContainer
+          position="top-center"
+          autoClose={5000}
+          hideProgressBar={true}
+          newestOnTop={false}
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="colored"
+          closeButton={false}
+          style={{ fontSize: "14px", lineHeight: "24px" }}
+        />
       </div>
     </div>
   );
