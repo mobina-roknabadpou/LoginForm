@@ -4,6 +4,7 @@ import NavigationBar from "../NavigationBar/index.jsx";
 import Input from "../Input/index.jsx";
 import { useState, useEffect } from "react";
 import { VALID_EMAIL, VALID_PASSWORD } from "../PattenValidation/validation";
+import ForgotBox from "../ForgotBox/index.jsx";
 
 function LoginForm() {
   const [email, setEmail] = useState({
@@ -31,14 +32,14 @@ function LoginForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!email.isValidate || !!password.isValidate) {
+    if (!email.isValidate) {
       alert("فرمت ایمیل صحیح نیست!");
     } else if (!email.isValidate || !password.isValidate) {
       alert("نام کاربری یا رمز ورودی صحیح نمی باشد.");
-    }else{
-
+    } else {
     }
   };
+
   return (
     <div className={style.container}>
       <NavigationBar />
@@ -68,10 +69,7 @@ function LoginForm() {
           >
             ورود
           </button>
-          <div className={style.reminder}>
-            <span>رمز عبور خود را فراموش کرده ام</span>
-            <span>ورود از طریق شماره تلفن همراه</span>
-          </div>
+          <ForgotBox reminder={style.reminder} />
         </form>
       </div>
     </div>
