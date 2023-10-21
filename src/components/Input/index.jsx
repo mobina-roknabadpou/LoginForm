@@ -15,7 +15,6 @@ function Input({ name, id, type, state, setState }) {
         value={state.value}
         onChange={(e) => setState({ ...state, value: e.target.value })}
         required
-        autocomplete={outoComplete}
       />
     </div>
   );
