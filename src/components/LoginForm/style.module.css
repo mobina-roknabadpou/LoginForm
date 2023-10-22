@@ -5,7 +5,7 @@
   padding: 0 40px;
 }
 
-.controlForm {
+.formControl {
   display: flex;
   flex-direction: column;
   padding: 22px 0 79px 0;
@@ -60,16 +60,16 @@
   margin: 50px 0 38px 0;
   cursor: pointer;
 }
-.btnSubmit:disabled{
+.btnSubmit:disabled {
   background-color: #aaa;
 }
-.reminder {
+.optionItem {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.reminder > span {
+.optionItem > span {
   color: #fff;
   text-align: center;
   font-family: IRANYekan;
@@ -80,29 +80,29 @@
   cursor: pointer;
 }
 
-.reminder > span:first-child {
+.optionItem > span:first-child {
   margin-bottom: 43px;
 }
 
 @media screen and (min-width: 681px) and (max-width: 1279px) {
-  .container{
+  .container {
     padding: 0;
   }
-  .controlForm {
+  .formControl {
     background-color: #222327;
-    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.50);
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.5);
     padding: 40px 40px 79px 40px;
   }
 }
 
-@media screen and (min-width: 1280px){
-  .container{
+@media screen and (min-width: 1280px) {
+  .container {
     max-width: 500px;
     padding: 0;
   }
-  .controlForm {
+  .formControl {
     background-color: #222327;
-    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.50);
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.5);
     padding: 36px 70px 70px 70px;
   }
 }
