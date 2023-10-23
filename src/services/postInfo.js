@@ -1,7 +1,6 @@
 import axios from "axios";
-import { notifySuccess, notifyError } from "../components/Notify/notify";
 
-export const postData = async (info) => {
+export const postData = async (info, showToastNotification, setIsLoading) => {
   try {
     const { data, status } = await axios.post(
       "https://www.namava.ir/api/v1.0/accounts/login/by-email",
@@ -12,23 +11,25 @@ export const postData = async (info) => {
         },
       }
     );
-
     if (status === 200) {
       if (!data.succeeded) {
         const { code, message } = data.error;
         if (code === 10002) {
           console.log(message);
+          showToastNotification("فرمت ایمیل صحیح نیست.", true);
         } else if (code === 10602) {
-          notifyError("نام کاربری یا رمز ورودی صحیح نمی باشد.");
+          showToastNotification("نام کاربری یا رمز ورودی صحیح نمی باشد.", true);
         }
         return;
       }
-      notifySuccess("با موفقیت انجام شد!");
+      showToastNotification("با موفقیت انجام شد!", false);
     } else if (status === 429) {
-      notifyError(
-        "استفاده بیش از اندازه از این امکان مجاز نیست دوباره مجددا امتحان کنید!"
+      showToastNotification(
+        "استفاده بیش از اندازه از این امکان مجاز نیست دوباره مجددا امتحان کنید!",
+        true
       );
     }
+    setIsLoading(false)
   } catch (err) {
     console.log(err);
   }
