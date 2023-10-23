@@ -1,6 +1,7 @@
 import axios from "axios";
 
 export const postData = async (info, showToastNotification, setIsLoading) => {
+  setIsLoading(true)
   try {
     const { data, status } = await axios.post(
       "https://www.namava.ir/api/v1.0/accounts/login/by-email",
@@ -11,6 +12,7 @@ export const postData = async (info, showToastNotification, setIsLoading) => {
         },
       }
     );
+    setIsLoading((prev) => !prev);
     if (status === 200) {
       if (!data.succeeded) {
         const { code, message } = data.error;
@@ -29,7 +31,6 @@ export const postData = async (info, showToastNotification, setIsLoading) => {
         true
       );
     }
-    setIsLoading(false)
   } catch (err) {
     console.log(err);
   }
