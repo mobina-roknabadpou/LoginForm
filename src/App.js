@@ -4,11 +4,9 @@ import LoginForm from "./components/LoginForm/index.jsx";
 
 const App = () => {
   return (
-    <>
-      <div className="container">
-        <LoginForm/>
-      </div>
-    </>
+    <div className="container">
+      <LoginForm />
+    </div>
   );
 };
 
