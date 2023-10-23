@@ -6,7 +6,7 @@ import { VALID_EMAIL } from "../PattenValidation/validation";
 import "react-toastify/dist/ReactToastify.css";
 import FormControl from "../FormControl/index.jsx";
 
-function LoginForm() {
+function LoginPage() {
   const [email, setEmail] = useState({
     value: "",
     isValid: false,
@@ -63,4 +63,4 @@ function LoginForm() {
   );
 }
 
-export default LoginForm;
+export default LoginPage;
