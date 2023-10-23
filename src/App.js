@@ -1,13 +1,12 @@
 import React from "react";
 import "./App.css";
-import LoginForm from "./components/LoginForm/index.jsx";
+import LoginPage from "./components/LoginPage/index.jsx";
 
 const App = () => {
   return (
     <div className="container">
-      <LoginForm />
+      <LoginPage />
     </div>
   );
 };
-
 export default App;
