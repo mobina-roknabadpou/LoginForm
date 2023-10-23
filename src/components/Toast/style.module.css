@@ -21,13 +21,13 @@
 }
 
 @media screen and (min-width: 681px) and (max-width: 1279px) {
-  .toast{
+  .toast {
     left: 39%;
   }
-} 
+}
 
-@media screen and (min-width: 1280px){
-  .toast{
+@media screen and (min-width: 1280px) {
+  .toast {
     left: 44%;
   }
 }

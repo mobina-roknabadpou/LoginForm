@@ -15,20 +15,20 @@ function Toast({ message, showToast, onClose, flag }) {
   console.log(showToast, message, onClose);
   return (
     <div className={style.container}>
-    <div
-      className={style.toast}
-      style={{
-        opacity: showToast ? 1 : 0,
-        background: flag ? "#D95C5C" : "lightGreen",
-      }}
-    >
-      {!flag ? (
-        <Icon icon={checkmark} size={20} className={style.icon} />
-      ) : (
-        <Icon icon={ic_warning} size={20} className={style.icon} />
-      )}{" "}
-      <span> {message}</span>
-    </div>
+      <div
+        className={style.toast}
+        style={{
+          opacity: showToast ? 1 : 0,
+          background: flag ? "#D95C5C" : "lightGreen",
+        }}
+      >
+        {!flag ? (
+          <Icon icon={checkmark} size={20} className={style.icon} />
+        ) : (
+          <Icon icon={ic_warning} size={20} className={style.icon} />
+        )}{" "}
+        <span> {message}</span>
+      </div>
     </div>
   );
 }
