@@ -49,7 +49,6 @@
   color: #fff;
   background-color: #1993ff;
   text-align: center;
-  font-family: IRANYekan;
   font-size: 14px;
   font-style: normal;
   font-weight: 700;
@@ -62,6 +61,8 @@
 }
 .btnSubmit:disabled {
   background-color: #aaa;
+  cursor: none;
+  
 }
 .optionItem {
   display: flex;
@@ -72,7 +73,6 @@
 .optionItem > span {
   color: #fff;
   text-align: center;
-  font-family: IRANYekan;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -85,6 +85,17 @@
 }
 
 @media screen and (min-width: 681px) and (max-width: 1279px) {
+  .title > h3 {
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  .optionItem > span {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+  }
+
   .container {
     padding: 0;
   }
@@ -96,6 +107,16 @@
 }
 
 @media screen and (min-width: 1280px) {
+  .title > h3 {
+    font-size: 20px;
+    line-height: 34px;
+  }
+  .optionItem > span {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+  }
+
   .container {
     max-width: 500px;
     padding: 0;
