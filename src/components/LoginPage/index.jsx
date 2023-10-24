@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { VALID_EMAIL } from "../PattenValidation/validation";
 import "react-toastify/dist/ReactToastify.css";
 import FormControl from "../FormControl/index.jsx";
+import Toast from "../Toast/index.jsx";
 
 function LoginPage() {
   const [email, setEmail] = useState({
@@ -40,7 +41,6 @@ function LoginPage() {
         toastMessage={toastMessage}
         showToast={showToast}
         closeToast={closeToast}
-        toastState={toastState}
       />
       <div className={style.formControl}>
         <FormControl
@@ -55,6 +55,12 @@ function LoginPage() {
           showToastNotification={showToastNotification}
         />
       </div>
+      <Toast
+        message={toastMessage}
+        showToast={showToast}
+        onClose={closeToast}
+        toastState={toastState}
+      />
     </div>
   );
 }
