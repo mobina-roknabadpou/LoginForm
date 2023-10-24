@@ -3,6 +3,7 @@ import Options from "../Options/index.jsx";
 import { postData } from "../../services/postInfo.js";
 import { useState } from "react";
 import Input from "../Input/index.jsx";
+import LottiePlayer from "../LottiePlayer/index.jsx";
 
 const FormControl = (props) => {
   const {
@@ -78,7 +79,7 @@ const FormControl = (props) => {
           className={classNameBtnSubmit}
           disabled={!isLoading && (!email.value || !password.value)}
         >
-          {!isLoading ? <p>ورود</p> : "isloading"}
+          {!isLoading ? <p>ورود</p> : <LottiePlayer />}
         </button>
         <Options classNameOptionItem={classNameOptionItem} />
       </form>
