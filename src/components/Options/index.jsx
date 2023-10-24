@@ -1,9 +1,9 @@
 import React from "react";
 
-function Options({ optionItem }) {
+function Options({ classNameOptionItem }) {
   return (
     <>
-      <div className={optionItem}>
+      <div className={classNameOptionItem}>
         <span>رمز عبور خود را فراموش کرده ام</span>
         <span>ورود از طریق شماره تلفن همراه</span>
       </div>
