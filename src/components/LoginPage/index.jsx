@@ -11,17 +11,17 @@ function LoginPage() {
     value: "",
     isValid: false,
   });
-
   const [password, setPassword] = useState({
     value: "",
   });
   const [showToast, setShowToast] = useState(false);
   const [toastMessage, setToastMessage] = useState("");
-  const [flag, setFlag] = useState(true);
-  const showToastNotification = (message, flag) => {
+  const [toastState, setToastState] = useState("warning");
+
+  const showToastNotification = (message, toastState) => {
     setToastMessage(message);
     setShowToast(true);
-    setFlag(flag);
+    setToastState(toastState);
   };
 
   const closeToast = () => {
@@ -32,7 +32,6 @@ function LoginPage() {
   useEffect(() => {
     const result = VALID_EMAIL.test(email.value);
     setEmail({ ...email, isValid: result });
-    console.log("email", email.isValid);
   }, [email.value]);
 
   return (
@@ -41,13 +40,9 @@ function LoginPage() {
         toastMessage={toastMessage}
         showToast={showToast}
         closeToast={closeToast}
-        flag={flag}
+        toastState={toastState}
       />
       <div className={style.formControl}>
-        <div className={style.title}>
-          <h3>ورود از طریق ایمیل</h3>
-          <span>لطفا ایمیل و رمز عبور خود را وارد کنید.</span>
-        </div>
         <FormControl
           email={email}
           setEmail={setEmail}
@@ -56,6 +51,7 @@ function LoginPage() {
           classNameForm={style.form}
           classNameBtnSubmit={style.btnSubmit}
           classNameOptionItem={style.optionItem}
+          classNameTitle={style.title}
           showToastNotification={showToastNotification}
         />
       </div>
