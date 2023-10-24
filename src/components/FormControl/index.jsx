@@ -30,11 +30,11 @@ const FormControl = (props) => {
     };
     setIsloading(true);
     postData(info)
-      .then((response) => {
-        const { data, succeeded } = response;
+      .then((data) => {
+        const { error, succeeded } = data;
         setIsloading(false);
         if (!succeeded) {
-          const { code } = data.error;
+          const { code } = error;
           if (code === 10002) {
             showToastNotification("فرمت ایمیل صحیح نیست.", "warning");
           } else if (code === 10602) {
