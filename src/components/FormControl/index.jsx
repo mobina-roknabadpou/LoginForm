@@ -28,7 +28,26 @@ const FormControl = (props) => {
       UserName: email.value,
       password: password.value,
     };
-    postData(info, showToastNotification, setIsloading);
+    setIsloading(true);
+    postData(info)
+      .then((response) => {
+        const { data, succeeded } = response;
+        setIsloading(false);
+        if (!succeeded) {
+          const { code } = data.error;
+          if (code === 10002) {
+            showToastNotification("فرمت ایمیل صحیح نیست.", "warning");
+          } else if (code === 10602) {
+            showToastNotification(
+              "نام کاربری یا رمز ورودی صحیح نمی باشد.",
+              "warning"
+            );
+          }
+          return;
+        }
+        showToastNotification("با موفقیت انجام شد!", "success");
+      })
+      .catch((error) => console.log(error));
   };
 
   return (
@@ -60,7 +79,7 @@ const FormControl = (props) => {
         >
           {!isLoading ? <p>ورود</p> : "isloading"}
         </button>
-        <Options optionItem={classNameOptionItem} />
+        <Options classNameOptionItem={classNameOptionItem} />
       </form>
     </>
   );
