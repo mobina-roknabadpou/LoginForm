@@ -3,6 +3,7 @@ import Options from "../Options/index.jsx";
 import { postData } from "../../services/postInfo.js";
 import { useState } from "react";
 import Input from "../Input/index.jsx";
+
 const FormControl = (props) => {
   const {
     email,
