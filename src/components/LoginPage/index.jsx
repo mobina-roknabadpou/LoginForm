@@ -4,7 +4,7 @@ import NavigationBar from "../NavigationBar/index.jsx";
 import { useState, useEffect } from "react";
 import { VALID_EMAIL } from "../PattenValidation/validation";
 import "react-toastify/dist/ReactToastify.css";
-import FormControl from "../FormControl/index.jsx";
+import Form from "../Form/index.jsx";
 import Toast from "../Toast/index.jsx";
 
 function LoginPage() {
@@ -43,7 +43,7 @@ function LoginPage() {
         closeToast={closeToast}
       />
       <div className={style.formControl}>
-        <FormControl
+        <Form
           email={email}
           setEmail={setEmail}
           password={password}
