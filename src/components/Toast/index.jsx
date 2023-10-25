@@ -5,11 +5,10 @@ import { checkmark } from "react-icons-kit/icomoon/checkmark";
 import Icon from "react-icons-kit";
 
 function Toast({ message, showToast, onClose, toastState }) {
+  const isWarning = toastState === "warning";
   useEffect(() => {
     if (showToast) {
-      const timer = setTimeout(() => {
-        onClose();
-      }, 5000);
+      const timer = setTimeout(() => onClose(), 5000);
       return () => clearTimeout(timer);
     }
   }, [showToast, onClose]);
@@ -18,21 +17,14 @@ function Toast({ message, showToast, onClose, toastState }) {
     <div
       className={`${style.container} ${showToast ? style.show : ""}`}
       style={{
-        background: toastState === "warning" ? "#D95C5C" : "lightGreen",
+        background: isWarning ? "#D95C5C" : "lightGreen",
       }}
     >
       <div className={style.toast}>
-        {toastState === "warning" ? (
           <Icon 
-          icon={ic_warning} 
+          icon={ isWarning ? ic_warning : checkmark} 
           size={20} 
           className={style.icon} />
-        ) : (
-          <Icon 
-          icon={checkmark} 
-          size={20} 
-          className={style.icon} />
-        )}
         <span> {message}</span>
       </div>
     </div>
