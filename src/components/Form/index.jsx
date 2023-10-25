@@ -18,7 +18,8 @@ const Form = (props) => {
     showToastNotification,
   } = props;
   const [isLoading, setIsloading] = useState(false);
-  let isvisible = false;
+  let isVisible = true;
+  let isDisabled = !isLoading && (!email.value || !password.value);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -70,7 +71,7 @@ const Form = (props) => {
           typeInput="text"
           state={email}
           setState={setEmail}
-          isvisible={isvisible}
+          isVisible={!isVisible}
         />
         <Input
           name="رمز عبور"
@@ -78,12 +79,8 @@ const Form = (props) => {
           typeInput="password"
           state={password}
           setState={setPassword}
-          isvisible={!isvisible}
         />
-        <button
-          className={classNameBtnSubmit}
-          disabled={!isLoading && (!email.value || !password.value)}
-        >
+        <button className={classNameBtnSubmit} disabled={isDisabled}>
           {isLoading ? <LottiePlayer /> : <span>ورود</span>}
         </button>
         <Options classNameOptionItem={classNameOptionItem} />
