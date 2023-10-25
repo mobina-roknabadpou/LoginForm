@@ -5,11 +5,10 @@
   position: fixed;
   left: 50%;
   transform: translate(-50%, -50%);
-  animation: fade-out 1s ease-out;
 }
 
 .container.show {
-  animation: fade-in 5s ease-in .2s;
+  animation: fade-in 5s ease-in 0.2s;
 }
 
 @keyframes fade-in {
@@ -32,23 +31,6 @@
   }
 }
 
-@keyframes fade-out {
-  0% {
-    opacity: 1;
-  }
-  25% {
-    opacity: 0.8;
-  }
-  50% {
-    opacity: 0.6;
-  }
-  75% {
-    opacity: 0.2;
-  }
-  100% {
-    opacity: 0;
-  }
-}
 .toast {
   display: flex;
   align-items: center;
