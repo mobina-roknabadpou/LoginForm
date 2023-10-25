@@ -1,15 +1,14 @@
 import React from "react";
-import { Player} from "@lottiefiles/react-lottie-player";
+import { Player } from "@lottiefiles/react-lottie-player";
+import loading from "./loading.json";
 function LottiePlayer() {
   return (
     <Player
       autoplay
       loop
-      src="./moreLottie.json"
-    //   style={{ height: "300px", width: "300px" }}
-    >
-      {/* <Controls visible={true} buttons={["play", "repeat", "frame", "debug"]} /> */}
-    </Player>
+      src={loading}
+      style={{ height: "30px", width: "30px" }}
+    ></Player>
   );
 }
 
