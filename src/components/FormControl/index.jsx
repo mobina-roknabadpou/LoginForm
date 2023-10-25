@@ -49,7 +49,12 @@ const FormControl = (props) => {
         }
         showToastNotification("با موفقیت انجام شد!", "success");
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        showToastNotification(
+          "استفاده بیش از اندازه از این امکان به صورت متوالی مجاز نیست. این امکان تا لحظاتی دیگر برای شما فراهم می شود!"
+        );
+        console.log(error.message);
+      });
   };
 
   return (
@@ -79,7 +84,7 @@ const FormControl = (props) => {
           className={classNameBtnSubmit}
           disabled={!isLoading && (!email.value || !password.value)}
         >
-          {isLoading ? <LottiePlayer /> : <p>ورود</p>}
+          {isLoading ? <LottiePlayer /> : <span>ورود</span>}
         </button>
         <Options classNameOptionItem={classNameOptionItem} />
       </form>
