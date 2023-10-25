@@ -5,7 +5,7 @@ import { useState } from "react";
 import Input from "../Input/index.jsx";
 import LottiePlayer from "../LottiePlayer/index.jsx";
 
-const FormControl = (props) => {
+const Form = (props) => {
   const {
     email,
     setEmail,
@@ -92,4 +92,4 @@ const FormControl = (props) => {
   );
 };
 
-export default FormControl;
+export default Form;
