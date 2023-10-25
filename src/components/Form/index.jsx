@@ -11,10 +11,10 @@ const Form = (props) => {
     setEmail,
     password,
     setPassword,
-    classNameForm,
-    classNameBtnSubmit,
-    classNameOptionItem,
-    classNameTitle,
+    formClassName,
+    btnSubmitClassName,
+    optionItemClassName,
+    titleClassName,
     showToastNotification,
   } = props;
   const [isLoading, setIsloading] = useState(false);
@@ -60,11 +60,11 @@ const Form = (props) => {
 
   return (
     <>
-      <div className={classNameTitle}>
+      <div className={titleClassName}>
         <h3>ورود از طریق ایمیل</h3>
         <span>لطفا ایمیل و رمز عبور خود را وارد کنید.</span>
       </div>
-      <form className={classNameForm} onSubmit={handleSubmit}>
+      <form className={formClassName} onSubmit={handleSubmit}>
         <Input
           name="ایمیل"
           id="email"
@@ -80,10 +80,10 @@ const Form = (props) => {
           state={password}
           setState={setPassword}
         />
-        <button className={classNameBtnSubmit} disabled={isDisabled}>
+        <button className={btnSubmitClassName} disabled={isDisabled}>
           {isLoading ? <LottiePlayer /> : <span>ورود</span>}
         </button>
-        <Options classNameOptionItem={classNameOptionItem} />
+        <Options classNameOptionItem={optionItemClassName} />
       </form>
     </>
   );

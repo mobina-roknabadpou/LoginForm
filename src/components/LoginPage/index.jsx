@@ -1,11 +1,11 @@
 import React from "react";
 import style from "./style.module.css";
-import NavigationBar from "../NavigationBar/index.jsx";
 import { useState, useEffect } from "react";
 import { VALID_EMAIL } from "../PattenValidation/validation";
 import "react-toastify/dist/ReactToastify.css";
 import Form from "../Form/index.jsx";
 import Toast from "../Toast/index.jsx";
+import Header from "../Header/index.jsx";
 
 function LoginPage() {
   const [email, setEmail] = useState({
@@ -37,21 +37,17 @@ function LoginPage() {
 
   return (
     <div className={style.container}>
-      <NavigationBar
-        toastMessage={toastMessage}
-        showToast={showToast}
-        closeToast={closeToast}
-      />
+      <Header />
       <div className={style.formControl}>
         <Form
           email={email}
           setEmail={setEmail}
           password={password}
           setPassword={setPassword}
-          classNameForm={style.form}
-          classNameBtnSubmit={style.btnSubmit}
-          classNameOptionItem={style.optionItem}
-          classNameTitle={style.title}
+          formClassName={style.form}
+          btnSubmitClassName={style.btnSubmit}
+          optionItemClassName={style.optionItem}
+          titleClassName={style.title}
           showToastNotification={showToastNotification}
         />
       </div>
