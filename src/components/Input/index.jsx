@@ -39,12 +39,11 @@ function Input(props) {
         autoComplete="off"
       />
       {isVisible && state.value && (
-        <span onClick={handleToggle} className={style.icon}>
           <Icon 
+          onClick={handleToggle}
           icon={icon} 
           size={24} 
           className={style.eyeIcon} />
-        </span>
       )}
     </div>
   );
