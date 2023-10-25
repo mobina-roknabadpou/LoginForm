@@ -6,12 +6,12 @@ import { eye } from "react-icons-kit/ionicons/eye";
 
 function Input(props) {
   const { 
-    name,
-    id, 
-    typeInput, 
-    state, 
-    setState, 
-    isvisible
+     name,
+     id, 
+     typeInput, 
+     state, 
+     setState, 
+     isVisible = true 
   } = props;
   const [type, setType] = useState("password");
   const icon = type === "password" ? eyeDisabled : eye;
@@ -30,7 +30,7 @@ function Input(props) {
         {name}
       </label>
       <input
-        type={isvisible ? type : typeInput}
+        type={isVisible ? type : typeInput}
         id={id}
         className={style.inputForm}
         value={state.value}
@@ -38,7 +38,7 @@ function Input(props) {
         required
         autoComplete="off"
       />
-      {isvisible && state.value && (
+      {isVisible && state.value && (
         <span onClick={handleToggle} className={style.icon}>
           <Icon 
           icon={icon} 
