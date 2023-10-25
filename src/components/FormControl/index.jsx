@@ -23,7 +23,7 @@ const FormControl = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!email.isValid) {
-      showToastNotification("فرمت ایمیل صحیح نیست", "warning");
+      showToastNotification("فرمت ایمیل صحیح نیست.", "warning");
       return;
     }
     const info = {
@@ -79,7 +79,7 @@ const FormControl = (props) => {
           className={classNameBtnSubmit}
           disabled={!isLoading && (!email.value || !password.value)}
         >
-          {!isLoading ? <p>ورود</p> : <LottiePlayer />}
+          {isLoading ? <LottiePlayer /> : <p>ورود</p>}
         </button>
         <Options classNameOptionItem={classNameOptionItem} />
       </form>

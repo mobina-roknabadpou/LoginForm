@@ -15,9 +15,8 @@ function Toast({ message, showToast, onClose, toastState }) {
 
   return (
     <div
-      className={style.container}
+      className={`${style.container} ${showToast ? style.show : ""}`}
       style={{
-        opacity: showToast ? 1 : 0,
         background: toastState === "warning" ? "#D95C5C" : "lightGreen",
       }}
     >
