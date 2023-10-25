@@ -1,6 +1,7 @@
 import React from "react";
 import { Player } from "@lottiefiles/react-lottie-player";
 import loading from "./loading.json";
+
 function LottiePlayer() {
   return (
     <Player
