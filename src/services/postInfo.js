@@ -13,7 +13,6 @@ export const postData = async (info) => {
     );
     const { status, data } = response;
     if (status === 200) {
-      console.log(data);
       return data;
     }
   } catch (error) {

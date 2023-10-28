@@ -2,7 +2,6 @@ import React from "react";
 import style from "./style.module.css";
 import { useState, useEffect } from "react";
 import { VALID_EMAIL } from "../PattenValidation/validation";
-import "react-toastify/dist/ReactToastify.css";
 import Form from "../Form/index.jsx";
 import Toast from "../Toast/index.jsx";
 import Header from "../Header/index.jsx";
