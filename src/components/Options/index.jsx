@@ -1,9 +1,9 @@
 import React from "react";
 
-function ForgotBox({reminder}) {
+function Options({ classNameOptionItem }) {
   return (
     <>
-      <div className={reminder}>
+      <div className={classNameOptionItem}>
         <span>رمز عبور خود را فراموش کرده ام</span>
         <span>ورود از طریق شماره تلفن همراه</span>
       </div>
@@ -11,4 +11,4 @@ function ForgotBox({reminder}) {
   );
 }
 
-export default ForgotBox;
+export default Options;

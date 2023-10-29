@@ -1,8 +1,8 @@
 import React from "react";
 import Logo from "../Icons/Logo/index.jsx";
-import style from './style.module.css'
+import style from "./style.module.css";
 
-function NavigationBar() {
+function Header() {
   return (
     <div className={style.container}>
       <div className={style.auth}>
@@ -13,4 +13,4 @@ function NavigationBar() {
   );
 }
 
-export default NavigationBar;
+export default Header;
